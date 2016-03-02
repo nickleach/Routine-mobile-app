@@ -2,7 +2,7 @@
 
 >Front End Repository built With React-Native and ES6
 
-*To run the enter the following in the command line
+* To run the app enter the following in the command line
 ```sh
-react-native run-ios
+$ react-native run-ios
 ```
