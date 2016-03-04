@@ -3,18 +3,25 @@ import * as Colors from '../modules/colors';
 
 const
     styles = StyleSheet.create({
+        welcome: {
+            fontSize: 55,
+            alignSelf: 'center',
+            marginTop: 75,
+            marginBottom: 50
+        },
     }),
 
 _component = React.createClass({
     statics: {
-        title: '',
+        title: 'Registration',
         description: ''
     },
-    displayName: '',
+    displayName: 'Register',
     propTypes: {
     },
     getInitialState() {
         return {
+            welcome: 'Routine'
         };
     },
     componentDidMount() {
@@ -24,7 +31,10 @@ _component = React.createClass({
     render() {
         return (
             <View>
-                <Text>default template</Text>
+                <Text
+                    style={styles.welcome}>
+                    {this.state.welcome}
+                </Text>
             </View>
         );
     }
