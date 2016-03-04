@@ -9,18 +9,25 @@ const
             marginTop: 75,
             marginBottom: 50
         },
+        icon: {
+            width: 20,
+            height: 20,
+            alignSelf: 'center',
+            marginRight: 10
+        },
         textInput: {
             height: 40,
-            width: 300,
+            width: 275,
             borderColor: '#333333',
             borderBottomWidth: 20
         },
         inputBorder: {
             borderBottomColor: '#333333',
-            borderBottomWidth: 1
+            borderBottomWidth: 1,
+            flexDirection: 'row',
         },
         button: {
-            width: 300,
+            width: 305,
             backgroundColor: '#333333',
             color: 'white',
             height: 40,
@@ -35,11 +42,10 @@ const
             fontSize: 20
         },
         image: {
-            width: 300,
+            width: 305,
             height: 40,
         }
     }),
-    facebookLogin = {uri: '../assets/facebookLogin.png'},
 
 _component = React.createClass({
     statics: {
@@ -56,8 +62,8 @@ _component = React.createClass({
             password: 'Password'
         };
     },
-    onLogin() {
-        console.log('pressing login button');
+    onLogin(email, password) {
+        console.log(email, password);
     },
     componentDidMount() {
     },
@@ -72,6 +78,9 @@ _component = React.createClass({
                 </Text>
                 <View
                     style={styles.inputBorder}>
+                    <Image
+                    style={styles.icon}
+                    source={require('../assets/email.png')} />
                     <TextInput
                         style={styles.textInput}
                         onChangeText={(email) => this.setState({email})}
@@ -81,6 +90,9 @@ _component = React.createClass({
                 </View>
                 <View
                     style={styles.inputBorder}>
+                    <Image
+                    style={styles.icon}
+                    source={require('../assets/password.png')} />
                     <TextInput
                         secureTextEntry={true}
                         style={styles.textInput}
@@ -90,7 +102,7 @@ _component = React.createClass({
                 </View>
                 <TouchableHighlight
                     underlayColor="#a9a9a9"
-                    onPress={this.onLogin()}>
+                    onPress={this.onLogin(this.state.email, this.state.password)}>
                     <Text
                         style={styles.button}>
                         Login
