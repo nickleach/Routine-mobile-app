@@ -92,6 +92,7 @@ const
                             onChangeText={(email) => this.setState({email})}
                             placeholder="E-mail Address"
                             value={this.state.email}
+                            clearTextOnFocus={true}
                           />
                     </View>
                     <View
