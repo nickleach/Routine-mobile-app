@@ -1,5 +1,6 @@
 import React, { Component, StyleSheet, Text, View, TextInput, TouchableHighlight, Image } from 'react-native';
 import * as Colors from '../modules/colors';
+import * as ServiceApi from '../modules/serviceApi';
 
 const
     styles = StyleSheet.create({
@@ -52,81 +53,79 @@ const
             height: 40,
         }
     }),
-
-_component = React.createClass({
-    statics: {
-        title: 'Login',
-        description: ''
-    },
-    displayName: 'Login',
-    propTypes: {
-    },
-    getInitialState() {
-        return {
-            welcome: 'Routine',
-            email: 'E-mail Address',
-            password: 'Password',    
-            dogged: false
-        };
-    },
-    _onLogin() {
-        console.log(this.state.email, this.state.password);
-    },
-    componentDidMount() {
-    },
-    componentDidUpdate(prevProps, prevState) {
-    },
-    render() {
-        return (
-            <View>
-                <Text
-                    style={styles.welcome}>
-                    {this.state.welcome}
-                </Text>
-                <View
-                    style={styles.inputBorder}>
-                    <Image
-                    style={styles.icon}
-                    source={require('../assets/email.png')} />
-                    <TextInput
-                        style={styles.textInput}
-                        onChangeText={(email) => this.setState({email})}
-                        placeholder="E-mail Address"
-                        value={this.state.email}
-                      />
-                </View>
-                <View
-                    style={styles.inputBorder}>
-                    <Image
-                    style={styles.icon}
-                    source={require('../assets/password.png')} />
-                    <TextInput
-                        secureTextEntry={true}
-                        style={styles.textInput}
-                        onChangeText={(password) => this.setState({password})}
-                        value={this.state.password}
-                      />
-                </View>
-                <TouchableHighlight
-                    style={styles.touchable}
-                    underlayColor="#a9a9a9"
-                    activeOpacity={0.3}
-                    onPress={this._onLogin}>
+    _component = React.createClass({
+        statics: {
+            title: 'Login',
+            description: ''
+        },
+        displayName: 'Login',
+        propTypes: {
+        },
+        getInitialState() {
+            return {
+                welcome: 'Routine',
+                email: 'E-mail Address',
+                password: 'Password',
+            };
+        },
+        componentDidMount() {
+        },
+        componentDidUpdate(prevProps, prevState) {
+        },
+        _onLogin() {
+            ServiceApi.userLogin({ password: this.state.password, username: this.state.email})
+        },
+        render() {
+            return (
+                <View>
                     <Text
-                        style={styles.button}>
-                        Login
+                        style={styles.welcome}>
+                        {this.state.welcome}
                     </Text>
-                </TouchableHighlight>
-                <Text
-                    style={styles.or}>
-                    or
-                </Text>
-                <Image
-                    style={styles.image}
-                    source={require('../assets/facebooklogin.png')} />
-            </View>
-        );
-    }
-});
+                    <View
+                        style={styles.inputBorder}>
+                        <Image
+                        style={styles.icon}
+                        source={require('../assets/email.png')} />
+                        <TextInput
+                            style={styles.textInput}
+                            onChangeText={(email) => this.setState({email})}
+                            placeholder="E-mail Address"
+                            value={this.state.email}
+                          />
+                    </View>
+                    <View
+                        style={styles.inputBorder}>
+                        <Image
+                        style={styles.icon}
+                        source={require('../assets/password.png')} />
+                        <TextInput
+                            secureTextEntry={true}
+                            style={styles.textInput}
+                            onChangeText={(password) => this.setState({password})}
+                            value={this.state.password}
+                          />
+                    </View>
+                    <TouchableHighlight
+                        style={styles.touchable}
+                        underlayColor="#a9a9a9"
+                        activeOpacity={0.3}
+                        onPress={this._onLogin}>
+                        <Text
+                            style={styles.button}>
+                            Login
+                        </Text>
+                    </TouchableHighlight>
+                    <Text
+                        style={styles.or}>
+                        or
+                    </Text>
+                    <Image
+                        style={styles.image}
+                        source={require('../assets/facebooklogin.png')} />
+                </View>
+            );
+        }
+    });
 
 export default _component;
