@@ -39,7 +39,7 @@ _component = React.createClass({
 
     getInitialState() {
         return {
-            page: 'registration',
+            page: 'login',
         };
     },
     componentDidMount() {
