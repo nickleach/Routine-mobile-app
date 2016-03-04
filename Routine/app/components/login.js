@@ -83,9 +83,9 @@ _component = React.createClass({
                     source={require('../assets/email.png')} />
                     <TextInput
                         style={styles.textInput}
-                        onChangeText={(email) => this.setState({email})}
-                        placeholder={this.state.email}
-                        value={this.state.email}
+                        onChangeText={(username) => this.setState({username})}
+                        placeholder="E-mail Address"
+                        value={this.state.username}
                       />
                 </View>
                 <View
@@ -102,7 +102,7 @@ _component = React.createClass({
                 </View>
                 <TouchableHighlight
                     underlayColor="#a9a9a9"
-                    onPress={this.onLogin(this.state.email, this.state.password)}>
+                    onPress={this.onLogin(this.state.username, this.state.password)}>
                     <Text
                         style={styles.button}>
                         Login
