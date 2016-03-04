@@ -4,6 +4,12 @@ import * as ServiceApi from '../modules/serviceApi';
 
 const
     styles = StyleSheet.create({
+        touchable: {
+            height: 40,
+            width: 305,
+            position: 'relative',
+            marginTop: 25,
+        },
         welcome: {
             fontSize: 55,
             alignSelf: 'center',
@@ -33,8 +39,8 @@ const
             color: 'white',
             height: 40,
             textAlign: 'center',
-            marginTop: 25,
-            paddingTop: 10
+            paddingTop: 10,
+            position: 'absolute'
         },
         or: {
             alignSelf: 'center',
@@ -84,7 +90,7 @@ const
                         <TextInput
                             style={styles.textInput}
                             onChangeText={(email) => this.setState({email})}
-                            placeholder={this.state.email}
+                            placeholder="E-mail Address"
                             value={this.state.email}
                           />
                     </View>
@@ -101,8 +107,10 @@ const
                           />
                     </View>
                     <TouchableHighlight
-                        onPress={this._onLogin}
-                        underlayColor="#a9a9a9">
+                        style={styles.touchable}
+                        underlayColor="#a9a9a9"
+                        activeOpacity={0.3}
+                        onPress={this._onLogin}>
                         <Text
                             style={styles.button}>
                             Login
