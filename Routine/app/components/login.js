@@ -3,6 +3,12 @@ import * as Colors from '../modules/colors';
 
 const
     styles = StyleSheet.create({
+        touchable: {
+            height: 40,
+            width: 305,
+            position: 'relative',
+            marginTop: 25,
+        },
         welcome: {
             fontSize: 55,
             alignSelf: 'center',
@@ -32,8 +38,8 @@ const
             color: 'white',
             height: 40,
             textAlign: 'center',
-            marginTop: 25,
-            paddingTop: 10
+            paddingTop: 10,
+            position: 'absolute'
         },
         or: {
             alignSelf: 'center',
@@ -59,11 +65,12 @@ _component = React.createClass({
         return {
             welcome: 'Routine',
             email: 'E-mail Address',
-            password: 'Password'
+            password: 'Password',    
+            dogged: false
         };
     },
-    onLogin(email, password) {
-        console.log(email, password);
+    _onLogin() {
+        console.log(this.state.email, this.state.password);
     },
     componentDidMount() {
     },
@@ -84,7 +91,7 @@ _component = React.createClass({
                     <TextInput
                         style={styles.textInput}
                         onChangeText={(email) => this.setState({email})}
-                        placeholder={this.state.email}
+                        placeholder="E-mail Address"
                         value={this.state.email}
                       />
                 </View>
@@ -101,8 +108,10 @@ _component = React.createClass({
                       />
                 </View>
                 <TouchableHighlight
+                    style={styles.touchable}
                     underlayColor="#a9a9a9"
-                    onPress={this.onLogin(this.state.email, this.state.password)}>
+                    activeOpacity={0.3}
+                    onPress={this._onLogin}>
                     <Text
                         style={styles.button}>
                         Login
