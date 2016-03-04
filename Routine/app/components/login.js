@@ -26,7 +26,6 @@ const
             height: 40,
             width: 275,
             borderColor: '#333333',
-            borderBottomWidth: 20
         },
         inputBorder: {
             borderBottomColor: '#333333',
