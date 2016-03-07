@@ -25,16 +25,16 @@ const
         textInput: {
             height: 40,
             width: 275,
-            borderColor: '#333333',
+            borderColor: Colors.darkGry,
         },
         inputBorder: {
-            borderBottomColor: '#333333',
+            borderBottomColor: Colors.darkGry,
             borderBottomWidth: 1,
             flexDirection: 'row',
         },
         button: {
             width: 305,
-            backgroundColor: '#333333',
+            backgroundColor: Colors.darkGry,
             color: 'white',
             height: 40,
             textAlign: 'center',

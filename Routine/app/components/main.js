@@ -22,7 +22,7 @@ const
         },
         instructions: {
             textAlign: 'center',
-            color: '#333333',
+            color: Colors.darkGry,
             marginBottom: 5,
         },
     }),

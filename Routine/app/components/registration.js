@@ -17,10 +17,10 @@ const
         textInput: {
             height: 40,
             width: 305,
-            borderColor: '#333333',
+            borderColor: Colors.darkGry,
         },
         inputBorder: {
-            borderBottomColor: '#333333',
+            borderBottomColor: Colors.darkGry,
             borderBottomWidth: 1,
             marginBottom: 5
         },
@@ -32,7 +32,7 @@ const
         },
         button: {
             width: 305,
-            backgroundColor: '#333333',
+            backgroundColor: Colors.darkGry,
             color: 'white',
             height: 40,
             textAlign: 'center',
@@ -98,6 +98,7 @@ _component = React.createClass({
                 <View
                     style={styles.inputBorder}>
                     <TextInput
+                        autoCapitalize="none"
                         style={styles.textInput}
                         onChangeText={(email) => this.setState({email})}
                         placeholder="E-mail Address"
@@ -114,7 +115,7 @@ _component = React.createClass({
                 </View>
                 <TouchableHighlight
                     style={styles.touchable}
-                    underlayColor="#a9a9a9"
+                    underlayColor="#666666"
                     activeOpacity={0.3}
                     onPress={this._onRegister}>
                     <Text
