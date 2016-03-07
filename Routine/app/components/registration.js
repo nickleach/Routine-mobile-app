@@ -22,16 +22,17 @@ const
         inputBorder: {
             borderBottomColor: Colors.darkGry,
             borderBottomWidth: 1,
-            marginBottom: 5
+            marginBottom: 5,
+            flexDirection: 'row'
         },
         touchable: {
             height: 40,
-            width: 305,
+            width: 335,
             position: 'relative',
             marginTop: 25,
         },
         button: {
-            width: 305,
+            width: 335,
             backgroundColor: Colors.darkGry,
             color: 'white',
             height: 40,
@@ -41,8 +42,14 @@ const
         },
         image: {
             marginTop: 20,
-            width: 305,
+            width: 335,
             height: 40,
+        },
+        icon: {
+            width: 20,
+            height: 20,
+            alignSelf: 'center',
+            marginRight: 10
         }
     }),
 
@@ -88,6 +95,9 @@ _component = React.createClass({
                 </Text>
                 <View
                     style={styles.inputBorder}>
+                    <Image
+                        style={styles.icon}
+                        source={require('../assets/name.png')} />
                     <TextInput
                         style={styles.textInput}
                         onChangeText={(name) => this.setState({name})}
@@ -97,6 +107,9 @@ _component = React.createClass({
                 </View>
                 <View
                     style={styles.inputBorder}>
+                    <Image
+                        style={styles.icon}
+                        source={require('../assets/email.png')} />
                     <TextInput
                         autoCapitalize="none"
                         style={styles.textInput}
@@ -107,6 +120,9 @@ _component = React.createClass({
                 </View>
                 <View
                     style={styles.inputBorder}>
+                    <Image
+                        style={styles.icon}
+                        source={require('../assets/password.png')} />
                     <TextInput
                         secureTextEntry={true}
                         style={styles.textInput}

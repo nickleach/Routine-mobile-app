@@ -87,6 +87,7 @@ const
                         style={styles.icon}
                         source={require('../assets/email.png')} />
                         <TextInput
+                            autoCapitalize="none"
                             style={styles.textInput}
                             onChangeText={(email) => this.setState({email})}
                             placeholder="E-mail Address"
