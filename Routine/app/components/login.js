@@ -25,17 +25,16 @@ const
         textInput: {
             height: 40,
             width: 275,
-            borderColor: '#333333',
-            borderBottomWidth: 20
+            borderColor: Colors.darkGry,
         },
         inputBorder: {
-            borderBottomColor: '#333333',
+            borderBottomColor: Colors.darkGry,
             borderBottomWidth: 1,
             flexDirection: 'row',
         },
         button: {
             width: 305,
-            backgroundColor: '#333333',
+            backgroundColor: Colors.darkGry,
             color: 'white',
             height: 40,
             textAlign: 'center',
@@ -88,10 +87,12 @@ const
                         style={styles.icon}
                         source={require('../assets/email.png')} />
                         <TextInput
+                            autoCapitalize="none"
                             style={styles.textInput}
                             onChangeText={(email) => this.setState({email})}
                             placeholder="E-mail Address"
                             value={this.state.email}
+                            clearTextOnFocus={true}
                           />
                     </View>
                     <View
