@@ -22,7 +22,7 @@ const
         },
         instructions: {
             textAlign: 'center',
-            color: '#333333',
+            color: Colors.darkGry,
             marginBottom: 5,
         },
     }),
@@ -39,7 +39,7 @@ _component = React.createClass({
 
     getInitialState() {
         return {
-            page: 'login',
+            page: 'registration',
         };
     },
     componentDidMount() {
