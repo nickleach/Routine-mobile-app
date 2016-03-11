@@ -64,8 +64,8 @@ const
         getInitialState() {
             return {
                 welcome: 'Routine',
-                email: 'E-mail Address',
-                password: 'Password',
+                email: null,
+                password: null,
             };
         },
         componentDidMount() {
@@ -73,7 +73,7 @@ const
         componentDidUpdate(prevProps, prevState) {
         },
         _onLogin() {
-            ServiceApi.userLogin({ password: this.state.password, username: this.state.email})
+            ServiceApi.userLogin({ password: this.state.password, email: this.state.email})
         },
         render() {
             return (
@@ -102,6 +102,7 @@ const
                         <TextInput
                             secureTextEntry={true}
                             style={styles.textInput}
+                            placeholder="Password"
                             onChangeText={(password) => this.setState({password})}
                             value={this.state.password}
                           />

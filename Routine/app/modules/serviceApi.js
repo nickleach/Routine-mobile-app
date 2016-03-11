@@ -23,8 +23,9 @@ function createUser({ password, name, username, email }) {
     });
 }
 
-function userLogin({ password, username }) {
-    fetch('https://stark-peak-45925.herokuapp.com/api/login', {
+function userLogin({ password, email }) {
+    email = email.toLowerCase().trim();
+    fetch('https://stark-peak-45925.herokuapp.com/api/users/login', {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
@@ -32,10 +33,10 @@ function userLogin({ password, username }) {
         },
         body: JSON.stringify({
             password,
-            username,
+            email,
         })
     })
-    .then((response) => response.text())
+    .then((response) => response.json())
     .then((responseText) => {
         console.log(responseText);
     })
